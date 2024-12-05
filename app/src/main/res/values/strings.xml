@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">DistributeurMediAminata</string>
+    <string name="lblNomMed">Nom médicament : </string>
+    <string name="lblQauntRestMed"> Quantité médicament restant :</string>
+    <string name="btnShowMedGet">Voir médicament restant</string>
+    <string name="menu">Menu</string>
+    <string name="titleObjet">Distributeur de médicament</string>
+    <string name="titleParametre">Paramètre</string>
+    <string name="lblMetreMed">Mettre des médicament : </string>
+    <string name="lblDoseMed">Dose médicament : </string>
+    <string name="btnParametrePost">Paramétré</string>
+    <string name="lblPartiePorte">Gestion de la Porte </string>
+    <string name="lblOuvreFerme">Ouvrir ou Fermer :</string>
+    <string name="lblFreq"> Fréquence : </string>
+    <string name="lblPouc">Pourcentage ouvrete : </string>
+    <string name="btnPageParam">Page Paramètre</string>
+
+    <string name="editHintNomMed">Fer</string>
+    <string name="editHintShowRestMed"> 50</string>
+    <string name="editHintMettreMed"> 20</string>
+    <string name="editHintDoseMed"> 1, 2 ou 3</string>
+    <string name="editHintOuvFer"> on ou off</string>
+    <string name="editHintPour">50 %</string>
+    <string name="editHintFreq">4</string>
+
+
+</resources>
