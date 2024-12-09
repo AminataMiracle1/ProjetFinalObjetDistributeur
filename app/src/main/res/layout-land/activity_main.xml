@@ -39,20 +39,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
+        android:layout_marginStart="12dp"
         android:ems="10"
         android:hint="@string/editHintNomMed"
         android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toEndOf="@+id/lblNomMed"
         app:layout_constraintTop_toBottomOf="@+id/lblTitrePage" />
 
     <EditText
         android:id="@+id/editShowQuantRest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
         android:ems="10"
         android:hint="@string/editHintShowRestMed"
         android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toEndOf="@+id/lblQuantMedRest"
         app:layout_constraintTop_toBottomOf="@+id/editShowNomMed" />
 
     <Button
@@ -60,6 +64,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/btnShowMedGet"
+        app:layout_constraintBottom_toTopOf="@+id/lblAfficheMise"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editPort" />
@@ -79,7 +84,8 @@
         android:layout_height="wrap_content"
         android:text="@string/lblIP"
         app:layout_constraintBaseline_toBaselineOf="@+id/editIPv4"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/editIPv4"
+        app:layout_constraintStart_toEndOf="@+id/editShowNomMed" />
 
     <EditText
         android:id="@+id/editIPv4"
@@ -89,7 +95,7 @@
         android:hint="@string/editHintIP"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editShowQuantRest" />
+        app:layout_constraintTop_toBottomOf="@+id/lblTitrePage" />
 
     <TextView
         android:id="@+id/lblPort"
@@ -97,7 +103,8 @@
         android:layout_height="wrap_content"
         android:text="@string/lblPort"
         app:layout_constraintBaseline_toBaselineOf="@+id/editPort"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/editPort"
+        app:layout_constraintStart_toEndOf="@+id/editShowQuantRest" />
 
     <EditText
         android:id="@+id/editPort"

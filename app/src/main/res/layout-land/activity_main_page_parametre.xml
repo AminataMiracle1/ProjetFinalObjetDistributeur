@@ -26,29 +26,11 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/lblPartiePorte"
+        android:id="@+id/lblVerrouiller"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/lblPartiePorte"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editDoseMed" />
-
-    <TextView
-        android:id="@+id/lblOuvriFerme"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/lblOuvreFerme"
-        app:layout_constraintBaseline_toBaselineOf="@+id/editOuvrirFerme"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/lblFreq"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/lblFreq"
-        app:layout_constraintBaseline_toBaselineOf="@+id/editFreq"
+        android:text="@string/lblVerrouille"
+        app:layout_constraintBaseline_toBaselineOf="@+id/editVerrouiller"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -64,8 +46,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="text"
         android:hint="@string/editHintMettreMed"
+        android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblTitrePageParametre" />
 
@@ -74,56 +56,50 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="text"
         android:hint="@string/editHintDoseMed"
+        android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editQuantiteMed" />
 
-    <TextView
-        android:id="@+id/lblPour"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/lblPouc"
-        app:layout_constraintBaseline_toBaselineOf="@+id/editPourc"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <EditText
-        android:id="@+id/editOuvrirFerme"
+        android:id="@+id/editVerrouiller"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
         android:ems="10"
-        android:inputType="text"
         android:hint="@string/editHintOuvFer"
+        android:inputType="datetime"
+        app:layout_constraintBottom_toTopOf="@+id/btnVerrouiller"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblPartiePorte" />
-
-    <EditText
-        android:id="@+id/editFreq"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="text"
-        android:hint="@string/editHintFreq"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editOuvrirFerme" />
-
-    <EditText
-        android:id="@+id/editPourc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="text"
-        android:hint="@string/editHintPour"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editFreq" />
+        app:layout_constraintTop_toBottomOf="@+id/btnParamePost" />
 
     <Button
         android:id="@+id/btnParamePost"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/btnParametrePost"
-        app:layout_constraintBottom_toBottomOf="parent"
+
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editPourc" />
+        app:layout_constraintTop_toBottomOf="@+id/editDoseMed" />
+
+    <Button
+        android:id="@+id/btnVerrouiller"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btnVer"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblVerrouiller" />
+
+    <Button
+        android:id="@+id/btnRetourMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btnRetourMain"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
