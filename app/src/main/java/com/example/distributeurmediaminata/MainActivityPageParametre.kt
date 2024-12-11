@@ -1,5 +1,6 @@
 package com.example.distributeurmediaminata
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -16,7 +17,14 @@ class MainActivityPageParametre : AppCompatActivity() {
         binding = ActivityMainPageParametreBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.btnRetourMain.setOnClickListener {
+            // Créer un intent
+            val intent= Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+
     }
+    // Gestion d'événemen pour le bouton retourner en arrière
     /**
      * EditText dateTimeEditText = findViewById(R.id.dateTimeEditText);
      *

@@ -39,12 +39,18 @@ android {
 }
 
 dependencies {
-
+    // Dépendance pour WorkManager
+    implementation(libs.androidx.work.runtime.ktx);
+    // pour un fichier json
+    implementation (libs.gson)
+    // Dépendance pour OkHttp
+    implementation(libs.okhttp)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.tracing.perfetto.handshake)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
