@@ -94,17 +94,16 @@ class MainActivity : AppCompatActivity() {
                 //Lancer le thread
                 thread.start()
             }
-
         }catch (e:Exception) {
             e.printStackTrace()
             Log.e("ERREUR", e.toString())
         }
     }
+
     /**
      * Mettre à jour la page avec un variable de temps voulu.
      *
      */
-
     private fun updatePage(){
         // Récuperer la variable du temps
         val tempsUpdate = binding.editafficheMise.text.toString().toInt()
@@ -150,22 +149,36 @@ class MainActivity : AppCompatActivity() {
             } else {
                 setUrlDef
             }
-
             // Vérifier si le temps est valide
             if (tempsUpdate > 0) {
-                // Utilisation de Handler pour attendre un certain temps
-                handler.post{
-                    // Effectuer la mise à jour après le délai
-                    val respServer: String = getData(setUrl).toString()
+                // Utilisation de Handler pour répéter l'action à intervalles réguliers
+                val interval = tempsUpdate * 1000L // Convertir les secondes en millisecondes
+                val runnable = object : Runnable {
+                    override fun run() {
+                        // Effectuer la mise à jour après le délai
+                        val respServer: String = getData(setUrl).toString()
+                        val medicament = JSONObject(respServer)
+                        val medRestant = medicament.getString("quantite")
 
-                    // Mettre à jour l'affichage avec la réponse du serveur (par exemple, afficher la réponse dans une TextView)
-                    binding.textViewAffiche.text = respServer
-                }, tempsUpdate * 1000L) // Convertir les secondes en millisecondes
+
+                        // Mettre à jour l'affichage avec la réponse du serveur
+                        binding.editShowQuantRest.setText(medRestant)
+
+                        // Planifier la prochaine mise à jour
+                        handler.postDelayed(this, interval)
+                    }
+                }
+                // Démarrer la première mise à jour
+                handler.post(runnable)
             } else {
                 // Si le temps de mise à jour est nul ou invalide, effectuer la mise à jour immédiatement
                 val respServer: String = getData(setUrl).toString()
-                binding.textViewAffiche.text = respServer
+                val medicament = JSONObject(respServer)
+                val medRestant = medicament.getString("quantite")
+                // Mettre à jour l'affichage avec la réponse du serveur (par exemple, afficher la réponse dans une TextView)
+                binding.editShowQuantRest.setText(medRestant)
             }
+
         }
     }
 

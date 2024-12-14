@@ -24,6 +24,8 @@ class MainActivityPageParametre : AppCompatActivity() {
         }
 
     }
+
+
     // Gestion d'événemen pour le bouton retourner en arrière
     /**
      * EditText dateTimeEditText = findViewById(R.id.dateTimeEditText);
