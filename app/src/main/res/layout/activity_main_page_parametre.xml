@@ -30,8 +30,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/lblVerrouille"
-        app:layout_constraintBaseline_toBaselineOf="@+id/editVerrouiller"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnParamePost" />
 
     <TextView
         android:id="@+id/lblDose"
@@ -47,7 +48,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/editHintMettreMed"
-        android:inputType="text"
+        android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblTitrePageParametre" />
 
@@ -57,21 +58,22 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/editHintDoseMed"
-        android:inputType="text"
+        android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editQuantiteMed" />
 
-    <EditText
-        android:id="@+id/editVerrouiller"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <!-- TimePicker pour permettre à l'utilisateur de définir l'heure -->
+    <!-- TimePicker pour permettre à l'utilisateur de définir l'heure -->
 
-        android:ems="10"
-        android:hint="@string/editHintOuvFer"
-        android:inputType="datetime"
+    <TimePicker
+        android:id="@+id/timePicker"
+        android:layout_width="305dp"
+        android:layout_height="375dp"
+        android:timePickerMode="clock"
         app:layout_constraintBottom_toTopOf="@+id/btnVerrouiller"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnParamePost" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblVerrouiller" />
 
     <Button
         android:id="@+id/btnParamePost"
@@ -90,9 +92,9 @@
         android:layout_height="wrap_content"
         android:text="@string/btnVer"
 
+        app:layout_constraintBottom_toTopOf="@+id/btnRetourMain"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblVerrouiller" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnRetourMain"
@@ -102,4 +104,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -18,6 +19,7 @@ import org.json.JSONObject
 
 private lateinit var binding: ActivityMainBinding
 class MainActivity : AppCompatActivity() {
+
     val handler = Handler(Looper.getMainLooper())
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,9 +31,22 @@ class MainActivity : AppCompatActivity() {
 
         // Aller sur l'autre page :
         btnPageParam.setOnClickListener {
-            // Créer un objet Intent pour naviguer vers l'autre activité
-            val intent = Intent(this, MainActivityPageParametre::class.java)
-            startActivity(intent)
+            // Envoyer les l'adresses IP et le port
+            val ip = binding.editIPv4.text.toString()
+            val port = binding.editPort.text.toString()
+            if (ip.isNotEmpty() && port.isNotEmpty()){
+                // Créer un objet Intent pour naviguer vers l'autre activité
+                val intent = Intent(this, MainActivityPageParametre::class.java)
+                // Ajouter des données à l'Intent
+                intent.putExtra("IP", ip)
+                intent.putExtra("PORT", port.toInt())
+                // Démarrer l'activité
+                startActivity(intent)
+            }else{
+                // Envoyer un toast qui lui dit de mettre les port et les IP
+                Toast.makeText(applicationContext, "remplicer le champ PORT et IP", Toast.LENGTH_SHORT).show()
+            }
+
         }
     }
     //TODO : Drawable l'arrière plan de l'affichage des médicaments

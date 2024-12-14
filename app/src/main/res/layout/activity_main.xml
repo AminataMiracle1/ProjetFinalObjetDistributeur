@@ -38,7 +38,6 @@
         android:id="@+id/editShowNomMed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
         android:ems="10"
         android:hint="@string/editHintNomMed"
         android:inputType="text"
@@ -60,6 +59,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/btnShowMedGet"
+        app:layout_constraintBottom_toTopOf="@+id/lblAfficheMise"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editPort" />
@@ -86,6 +86,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:layout_marginTop="20dp"
         android:hint="@string/editHintIP"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
@@ -105,7 +106,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/editHintPort"
-        android:inputType="text"
+        android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editIPv4" />
 
@@ -123,7 +124,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/editHintTempsRaf"
-        android:inputType="text"
+        android:inputType="number"
         app:layout_constraintBottom_toTopOf="@+id/btnRafraichire"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnShowMed" />
@@ -138,5 +139,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblAfficheMise" />
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/materialToolbar2"
+        android:layout_width="404dp"
+        android:layout_height="9dp"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintBottom_toTopOf="@+id/lbIP4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblQuantMedRest" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -17,12 +17,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <TextView
         android:id="@+id/lblMettreMed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/lblMetreMed"
-        app:layout_constraintBaseline_toBaselineOf="@+id/editQuantiteMed"
+        app:layout_constraintBaseline_toBaselineOf="@+id/lblVerrouiller"
+        app:layout_constraintEnd_toStartOf="@+id/timePicker"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -30,16 +32,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/lblVerrouille"
-        app:layout_constraintBaseline_toBaselineOf="@+id/editVerrouiller"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblTitrePageParametre" />
 
     <TextView
         android:id="@+id/lblDose"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/lblDoseMed"
-        app:layout_constraintBaseline_toBaselineOf="@+id/editDoseMed"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/timePicker"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editQuantiteMed" />
 
     <EditText
         android:id="@+id/editQuantiteMed"
@@ -47,9 +50,10 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/editHintMettreMed"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblTitrePageParametre" />
+        android:inputType="number"
+        app:layout_constraintEnd_toStartOf="@+id/timePicker"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblMettreMed" />
 
     <EditText
         android:id="@+id/editDoseMed"
@@ -57,21 +61,20 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/editHintDoseMed"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editQuantiteMed" />
+        android:inputType="number"
 
-    <EditText
-        android:id="@+id/editVerrouiller"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/timePicker"
+        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblDose" />
 
-        android:ems="10"
-        android:hint="@string/editHintOuvFer"
-        android:inputType="datetime"
-        app:layout_constraintBottom_toTopOf="@+id/btnVerrouiller"
+    <TimePicker
+        android:id="@+id/timePicker"
+        android:layout_width="420dp"
+        android:layout_height="263dp"
+        android:timePickerMode="clock"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnParamePost" />
+        app:layout_constraintTop_toBottomOf="@+id/lblVerrouiller" />
 
     <Button
         android:id="@+id/btnParamePost"
@@ -79,8 +82,7 @@
         android:layout_height="wrap_content"
         android:text="@string/btnParametrePost"
 
-
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/timePicker"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editDoseMed" />
 
@@ -90,9 +92,9 @@
         android:layout_height="wrap_content"
         android:text="@string/btnVer"
 
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblVerrouiller" />
+        app:layout_constraintTop_toBottomOf="@+id/timePicker" />
 
     <Button
         android:id="@+id/btnRetourMain"
@@ -102,4 +104,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

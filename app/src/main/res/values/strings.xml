@@ -8,9 +8,9 @@
     <string name="titleParametre">Paramètre</string>
     <string name="lblMetreMed">Stock médicament: </string>
     <string name="lblDoseMed">Dose médicament : </string>
-    <string name="btnParametrePost">Paramétré</string>
+    <string name="btnParametrePost">Envoyer Quantité et Dose</string>
     <string name="lblPartiePorte">Gestion de la Porte </string>
-    <string name="lblVerrouille">Verrouiller le Distributeur :</string>
+    <string name="lblVerrouille">Planifier lheure de la fermeture du distributeur</string>
     <string name="lblFreq"> Fréquence : </string>
     <string name="lblPouc">Pourcentage ouvrete : </string>
     <string name="btnPageParam">Page Paramètre</string>
