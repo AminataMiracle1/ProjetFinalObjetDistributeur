@@ -175,10 +175,8 @@ class MainActivity : AppCompatActivity() {
                         val medicament = JSONObject(respServer)
                         val medRestant = medicament.getString("quantite")
 
-
                         // Mettre à jour l'affichage avec la réponse du serveur
                         binding.editShowQuantRest.setText(medRestant)
-
                         // Planifier la prochaine mise à jour
                         handler.postDelayed(this, interval)
                     }
