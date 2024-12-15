@@ -70,7 +70,7 @@
         android:layout_width="305dp"
         android:layout_height="375dp"
         android:timePickerMode="clock"
-        app:layout_constraintBottom_toTopOf="@+id/btnVerrouiller"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblVerrouiller" />
@@ -94,7 +94,8 @@
 
         app:layout_constraintBottom_toTopOf="@+id/btnRetourMain"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timePicker" />
 
     <Button
         android:id="@+id/btnRetourMain"
@@ -104,5 +105,14 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnPeriodique"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btnPeriodique"
+        app:layout_constraintBottom_toTopOf="@+id/btnVerrouiller"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timePicker" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

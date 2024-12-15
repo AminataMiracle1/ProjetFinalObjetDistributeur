@@ -21,6 +21,7 @@
     <string name="lblTitreRaff"> Section Mise de la  page</string>
     <string name="btnVer">Verrouiller </string>
     <string name="btnRetourMain">Retour en arrière</string>
+    <string name="btnPeriodique">Heure de Rappelle</string>
 
     <string name="editHintTempsRaf">1</string>
     <string name="editHintNomMed">Fer</string>
