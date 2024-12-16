@@ -66,7 +66,7 @@ class MainActivityPageParametre : AppCompatActivity() {
             val delayInMillis = calculateDelayUntil(hour, minute)
             // Afficher un message de confirmation pour l'utilisateur
             val timeMessage = "l'objet est fermer dans ${hour}:${minute}."
-            Toast.makeText(applicationContext, timeMessage, Toast.LENGTH_SHORT).show()
+            Toast.makeText(applicationContext, timeMessage, Toast.LENGTH_LONG).show()
 
             Log.d("delayInMillis", "${delayInMillis}" )
             // Lancer la planification du fermeture de l'objet
