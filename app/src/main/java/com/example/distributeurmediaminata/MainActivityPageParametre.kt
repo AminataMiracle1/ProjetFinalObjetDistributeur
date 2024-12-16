@@ -159,7 +159,9 @@ class MainActivityPageParametre : AppCompatActivity() {
             val ip = intent.getStringExtra("IP")
             val port = intent.getStringExtra("PORT")
             // Le lien de connection
-            val stUrl = "http://${ip}:${port}"
+            Log.d("ServeurConnecter","${ip} ${port}")
+            val stUrl = "http://${ip}:${8080}"
+            Log.d("SetUrl", stUrl)
 
             // Recupere le contenus des champs
             val qauntite = binding.editQuantiteMed.text.toString().toInt()
@@ -172,6 +174,7 @@ class MainActivityPageParametre : AppCompatActivity() {
             // Créer un nouveau thread pour exceuter la requeste POSt
             val thread = Thread{
                 val reponseServer = requettePost("${stUrl}" , "${jsonMsg}")
+                Log.d("ServeurConnecter","${reponseServer}")
                 // un handler pour m'anipuler le layout.
                 handler.post{
                     Toast.makeText(applicationContext,"Réponse du serveur: $reponseServer", Toast.LENGTH_LONG).show()
@@ -211,7 +214,7 @@ class MainActivityPageParametre : AppCompatActivity() {
         val ip = intent.getStringExtra("IP")
         val port = intent.getStringExtra("PORT")
         // Le lien de connection
-        val stUrl = "http://${ip}:${port}"
+        val stUrl = "http://${ip}:${8080}"
         val doseObject = DonneParametrer(quantite = 0, dose = 0) // Exemple de données
         val jsonMsg = Gson().toJson(doseObject)
         // Créer une tâche unique à planifier avec WorkManager
